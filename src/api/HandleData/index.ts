@@ -45,7 +45,6 @@ export class HandleData {
         const swapfree = parseFloat((data.swapfree / (1024 * 1024 * 1024)).toFixed(2));
         const ddr = layout[0]['type'];
         const clockspeed = layout[0]['clockSpeed'];
-        let manufacturer: string = '';
         const memInfo:MemInfo = {
             manufacturer:layout[0].manufacturer,
             type:ddr,
