@@ -28,7 +28,7 @@ export function apply(ctx: Context) {
       核心数: ${cpuInfo.cores}<child/>
       线程数: ${cpuInfo.threads}<child/>
       频率: ${cpuInfo.speed} GHZ<child/>
-      温度: ${cpuInfo.temp} 摄氏度<child/>
+      温度: ${cpuInfo.temp} ℃<child/>
       ${loadInfo}<child/>
       正常运行时间: ${cpuInfo.uptime.days}天 ${cpuInfo.uptime.hours}小时 ${cpuInfo.uptime.minutes}分钟<child/>
       </parent>
@@ -37,11 +37,11 @@ export function apply(ctx: Context) {
       制造商: ${memInfo.manufacturer}<child/>
       DDR: ${memInfo.type}<child/>
       内存大小: ${memInfo.total} GB<child/>
-      使用中: ${memInfo.used} GB<child/>
-      可用: ${memInfo.free} GB<child/>
+      使用中: ${memInfo.used} GB (${((memInfo.used/memInfo.total)*100).toFixed(2)}%)<child/>
+      可用: ${memInfo.free} GB (${((memInfo.free/memInfo.total)*100).toFixed(2)}%)<child/>
       swap大小: ${memInfo.swaptotal} GB<child/>
-      使用中: ${memInfo.swapused} GB<child/>
-      可用: ${memInfo.swapfree} GB<child/>
+      使用中: ${memInfo.swapused} GB (${((memInfo.swapused/memInfo.swaptotal)*100).toFixed(2)}%)<child/>
+      可用: ${memInfo.swapfree} GB (${((memInfo.swapfree/memInfo.swaptotal)*100).toFixed(2)}%)<child/>
       </parent>
       </>`;
       session.send(msg);
