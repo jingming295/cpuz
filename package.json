@@ -14,7 +14,8 @@
     "url": "git+https://github.com/jingming295/koishi-plugin-cpuz"
   },
   "scripts": {
-    "update": "git add . && git commit -m \"更新\" && git push -u origin master"
+    "push": "git add . && git commit -m \"更新\" && git push -u origin master",
+    "pull": "git pull origin master && git merge origin/master && git push origin master"
   },
   "keywords": [
     "chatbot",
