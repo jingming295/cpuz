@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-cpuz",
   "description": "查询cpu和内存信息",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -23,7 +23,7 @@
     "plugin"
   ],
   "peerDependencies": {
-    "koishi": "^4.14.5"
+    "koishi": "^4.14.0"
   },
   "dependencies": {
     "systeminformation": "^5.21.8"
