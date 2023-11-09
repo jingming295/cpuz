@@ -12,7 +12,7 @@ export class CpuStatus {
         }
     }
 
-    async getCpuUsage() {
+    async getCpuCoreLoad() {
         try {
             const data = await si.currentLoad();
             return data.cpus.map(core => core.load);
@@ -42,6 +42,11 @@ export class CpuStatus {
         }
     }
 
+    async getCpuLoad() {
+        const load = await si.currentLoad();
+        return load.currentLoad
+    }
+    
 }
 
 export class MemoryStatus {
@@ -58,10 +63,12 @@ export class MemoryStatus {
     async getMemoryLayout() {
         try {
             const data = await si.memLayout();
-            return data;
+            const filteredData = data.filter(module => module.size > 1);
+            return filteredData;
         } catch (error) {
             console.error(error);
             return null;
         }
     }
+    
 }

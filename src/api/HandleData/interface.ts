@@ -11,7 +11,8 @@ interface CPUInfo {
     threads:number
     speed:number
     temp:number
-    load:number[]
+    cpuload:number
+    coreLoad:number[]
     uptime:UptimeInfo
 }
 
