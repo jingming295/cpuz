@@ -88,34 +88,26 @@ export class HandleData {
             }
         }
         const msg = `
-        <>
-        <parent>
-        处理器详情:<child/>
-        制造商: ${cpuInfo.manufacturer}<child/>
-        处理器名称: ${cpuInfo.model}<child/>
-        核心数: ${cpuInfo.cores}<child/>
-        线程数: ${cpuInfo.threads}<child/>
-        频率: ${cpuInfo.speed} GHZ<child/>
-        温度: ${cpuInfo.temp} ℃<child/>
-        正常运行时间: ${cpuInfo.uptime.days}天 ${cpuInfo.uptime.hours}小时 ${cpuInfo.uptime.minutes}分钟<child/>
-        当前处理器负载: ${cpuInfo.cpuload.toFixed(2)}%<child/>
-        </parent>
-        <parent>
-        ${loadInfo}<child/>
-        </parent>
-        <parent>
-        内存详情:<child/>
-        制造商: ${memInfo.manufacturer}<child/>
-        DDR: ${memInfo.type}<child/>
-        时钟速度: ${memInfo.clockspeed || '无法获取'}<child/>
-        内存大小: ${memInfo.total} GB<child/>
-        使用中: ${memInfo.used} GB (${((memInfo.used/memInfo.total)*100).toFixed(2)}%)<child/>
-        可用: ${memInfo.free} GB (${((memInfo.free/memInfo.total)*100).toFixed(2)}%)<child/>
-        swap大小: ${memInfo.swaptotal} GB<child/>
-        使用中: ${memInfo.swapused} GB (${((memInfo.swapused/memInfo.swaptotal)*100).toFixed(2)}%)<child/>
-        可用: ${memInfo.swapfree} GB (${((memInfo.swapfree/memInfo.swaptotal)*100).toFixed(2)}%)<child/>
-        </parent>
-        </>
+        处理器详情:<br>
+        制造商: ${cpuInfo.manufacturer}<br>
+        处理器名称: ${cpuInfo.model}<br>
+        核心数: ${cpuInfo.cores}<br>
+        线程数: ${cpuInfo.threads}<br>
+        频率: ${cpuInfo.speed} GHZ<br>
+        温度: ${cpuInfo.temp} ℃<br>
+        正常运行时间: ${cpuInfo.uptime.days}天 ${cpuInfo.uptime.hours}小时 ${cpuInfo.uptime.minutes}分钟<br>
+        当前处理器负载: ${cpuInfo.cpuload.toFixed(2)}%<br>
+        <br>${loadInfo}<br><br>
+        内存详情:<br>
+        制造商: ${memInfo.manufacturer}<br>
+        DDR: ${memInfo.type}<br>
+        时钟速度: ${memInfo.clockspeed || '无法获取'}<br>
+        内存大小: ${memInfo.total} GB<br>
+        使用中: ${memInfo.used} GB (${((memInfo.used/memInfo.total)*100).toFixed(2)}%)<br>
+        可用: ${memInfo.free} GB (${((memInfo.free/memInfo.total)*100).toFixed(2)}%)<br>
+        swap大小: ${memInfo.swaptotal} GB<br>
+        使用中: ${memInfo.swapused} GB (${((memInfo.swapused/memInfo.swaptotal)*100).toFixed(2)}%)<br>
+        可用: ${memInfo.swapfree} GB (${((memInfo.swapfree/memInfo.swaptotal)*100).toFixed(2)}%)
         `;
         return msg
     }
